@@ -57,9 +57,12 @@ h2{
   font-family: 'Dancing Script', cursive;
   font-size: 3rem;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 5px red;
 }
 .content{
   font-family: 'Dancing Script', cursive;
-  width: 60%;
+  width: 80%;
   margin: auto;
+  font-size: 2rem;
+  text-shadow: 1px 0 30px red;
 }
