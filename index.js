@@ -36,6 +36,7 @@ function wrong(color) {
     $("." + color).toggleClass("pressed");
   }, 200);
   sequenceIndex = -1;
+  $(".beginRestart").text("Restart");
 }
 
 // nextSequence function
@@ -53,16 +54,6 @@ function nextSequence() {
     console.log(sequence);
   }
 }
-
-// function checkCompletion_ofSequence()
-// {
-//   if (sequenceIndex !=-1&&sequenceIndex==sequence.length-1) {
-//
-//     sequenceIndex=0;
-//     return true;
-//   }
-//   return false;
-// }
 
 // check and action function
 function checkAndAct(color) {
@@ -90,7 +81,18 @@ $("body").on("keydown", function(e) {
     nextSequence();
   }
 })
-
+$(".beginRestart").click(function(){
+  if (sequence.length === 0) {
+    nextSequence();
+    $(".beginRestart").text("playing...");
+  }
+  else if(sequenceIndex==-1){
+    sequenceIndex=0;
+    sequence=[];
+    level=0;
+    nextColor='';
+  }
+})
 
 $(".red").click(function() {
 
